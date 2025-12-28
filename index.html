@@ -1,224 +1,196 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Kim — Иглотерапия</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(120deg, #f9f9f9, #ffffff);
-      color: #222;
-      scroll-behavior: smooth;
-      animation: bgShift 10s ease-in-out infinite alternate;
-    }
+<meta charset="UTF-8">
+<title>Dr.Kim.kz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @keyframes bgShift {
-      0% { background: linear-gradient(120deg, #f9f9f9, #ffffff); }
-      50% { background: linear-gradient(120deg, #fff, #f4f4f4); }
-      100% { background: linear-gradient(120deg, #fafafa, #ffffff); }
-    }
+<style>
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+  background:#f7f9f8;
+  color:#222;
+  animation:bgMove 12s ease-in-out infinite alternate;
+}
 
-    header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      animation: fadeDown 2s ease forwards;
-    }
+@keyframes bgMove {
+  from { background:#f7f9f8; }
+  to { background:#eef4f1; }
+}
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+header {
+  background:linear-gradient(180deg,#ffffff,#f2f6f4);
+  padding:18px 0;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border-bottom:1px solid #e1e7e4;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
 
-    .logo {
-      font-size: 30px;
-      font-weight: 700;
-      color: #c91f37;
-      letter-spacing: 1px;
-      animation: logoGlow 4s ease-in-out infinite alternate;
-    }
+nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:900px;
+  margin:auto;
+  padding:0 20px;
+}
 
-    @keyframes logoGlow {
-      0%, 100% { text-shadow: 0 0 5px rgba(201,31,55,0.1); transform: scale(1); }
-      50% { text-shadow: 0 0 15px rgba(201,31,55,0.25); transform: scale(1.05); }
-    }
+nav a {
+  text-decoration:none;
+  color:#1f6f5c;
+  font-weight:600;
+  padding:8px 14px;
+  border-radius:20px;
+  transition:all .3s ease;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #222;
-      margin-left: 30px;
-      font-weight: 500;
-      transition: 0.4s;
-    }
+nav a:hover {
+  background:#e6f2ee;
+  transform:translateY(-1px);
+}
 
-    nav a:hover {
-      color: #c91f37;
-      text-shadow: 0 0 5px rgba(201,31,55,0.2);
-    }
+.lang-btns button {
+  border:none;
+  background:#1f6f5c;
+  color:white;
+  padding:6px 12px;
+  margin-left:5px;
+  border-radius:6px;
+  cursor:pointer;
+}
 
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      animation: fadeUp 2s ease both;
-    }
+section {
+  max-width:900px;
+  margin:50px auto;
+  padding:0 20px;
+  animation:float 10s ease-in-out infinite;
+}
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes float {
+  from { transform:translateY(0); }
+  to { transform:translateY(-5px); }
+}
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 25px;
-      color: #c91f37;
-      animation: floatText 5s ease-in-out infinite alternate;
-    }
+h1 { color:#1f6f5c; }
 
-    @keyframes floatText {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(6px); }
-      100% { transform: translateY(0px); }
-    }
+.hidden { display:none; }
 
-    h2 {
-      color: #333;
-      margin-top: 40px;
-      font-size: 24px;
-      animation: fadeSoft 8s ease-in-out infinite alternate;
-    }
+.map {
+  margin-top:20px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
 
-    @keyframes fadeSoft {
-      0%, 100% { opacity: 0.95; }
-      50% { opacity: 1; }
-    }
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #444;
-      margin-bottom: 20px;
-      animation: textFlow 9s ease-in-out infinite alternate;
-    }
-
-    @keyframes textFlow {
-      0% { opacity: 0.95; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(4px); }
-      100% { opacity: 0.95; transform: translateY(0); }
-    }
-
-    .slogan {
-      font-size: 22px;
-      color: #333;
-      font-weight: 600;
-      margin-top: 50px;
-      animation: pulseGlow 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulseGlow {
-      from { color: #333; text-shadow: none; }
-      to { color: #c91f37; text-shadow: 0 0 15px rgba(201,31,55,0.25); }
-    }
-
-    .contact-info {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 1.8;
-      animation: fadeSoft 6s ease-in-out infinite alternate;
-    }
-
-    .contact-info a {
-      color: #c91f37;
-      text-decoration: none;
-    }
-
-    iframe {
-      display: block;
-      margin: 40px auto;
-      border: none;
-      width: 100%;
-      max-width: 800px;
-      height: 400px;
-      border-radius: 10px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-      animation: floatMap 10s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatMap {
-      from { transform: translateY(0px); }
-      to { transform: translateY(8px); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #fff;
-      border-top: 1px solid #eee;
-      color: #777;
-      font-size: 16px;
-      animation: fadeSoft 5s ease-in-out infinite alternate;
-    }
-
-  </style>
+footer {
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">Dr. Kim</div>
-    <nav>
+<header>
+  <nav>
+    <div>
       <a href="#about">О нас</a>
       <a href="#contacts">Контакты</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h1>Иглотерапия — путь к естественному исцелению</h1>
-    <p>
-      Иглотерапия — это древний метод восстановления баланса в организме через воздействие на биологически активные точки. 
-      Она помогает телу активировать собственные механизмы самоисцеления, улучшая циркуляцию энергии и крови.
-    </p>
-
-    <h2>Влияние на здоровье</h2>
-    <p>
-      Когда внутренние органы воспалены или ослаблены, организм теряет способность правильно усваивать витамины и питательные вещества. 
-      Даже при приёме витаминов уровень их усвоения может оставаться низким, если органы работают с перегрузкой или находятся в состоянии воспаления.
-      Иглотерапия способствует восстановлению гармонии между внутренними системами, благодаря чему витамины начинают усваиваться естественным образом.
-    </p>
-
-    <p>
-      Поэтому восполнение дефицита витаминов без устранения внутренних нарушений — часто бессмысленно. 
-      Иглотерапия помогает восстановить правильную работу органов, устраняя первопричину дефицитов.
-    </p>
-
-    <div class="slogan">Не верите — попробуйте!</div>
-  </section>
-
-  <section id="contacts">
-    <h1>Наши контакты</h1>
-    <div class="contact-info">
-      Телефон: <a href="tel:+77029644489">+7 702 964 4489</a><br>
-      Адрес: Переулок Талды, 4 / микрорайон Ак-булак-2, 3<br>
-      Время работы: с 10:00 до 18:00
     </div>
+    <div class="lang-btns">
+      <button onclick="ru()">RU</button>
+      <button onclick="cn()">中文</button>
+    </div>
+  </nav>
+</header>
 
-    <iframe 
-      src="https://www.google.com/maps?q=Переулок%20Талды%204%20Ак-булак-2%2C%20Астана&output=embed"
-      allowfullscreen>
+<!-- RU -->
+<div id="ru">
+<section id="about">
+  <h1>Dr.Kim.kz</h1>
+  <p>
+    Иглотерапия воздействует на первопричину заболевания.
+    Воспаления и опухоли внутренних органов нарушают обмен веществ
+    и вызывают дефицит витаминов, который не устраняется
+    приёмом препаратов без устранения причины.
+  </p>
+  <p>
+    В отличие от традиционной медицины, иглотерапия восстанавливает
+    естественные процессы организма без операций и вредных таблеток.
+  </p>
+  <p><strong>Не верите? Попробуйте!</strong></p>
+</section>
+
+<section id="contacts">
+  <h1>Контакты</h1>
+  <p><strong>Телефон / WhatsApp:</strong> +7 702 964 4489</p>
+  <p><strong>Время работы:</strong> с 6:00 до 17:00</p>
+  <p><strong>Адрес:</strong> Переулок Талды, 4 / микрорайон Ак-булак-2, 3</p>
+
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=Переулок+Талды+4+Алматы&output=embed"
+      width="100%" height="300" style="border:0;" loading="lazy">
     </iframe>
-  </section>
+  </div>
+</section>
+</div>
 
-  <footer>
-    © 2025 Dr. Kim. Все права защищены.
-  </footer>
+<!-- CN -->
+<div id="cn" class="hidden">
+<section>
+  <h1>Dr.Kim.kz</h1>
+  <p>
+    针灸疗法针对疾病的根本原因。
+    内脏的炎症或肿瘤会破坏新陈代谢，
+    在未消除病因的情况下，维生素无法被吸收。
+  </p>
+  <p>
+    与传统医学不同，针灸激活人体自我修复能力，
+    无需手术或有害药物。
+  </p>
+  <p><strong>不相信？试试看！</strong></p>
+</section>
+
+<section>
+  <h1>联系方式</h1>
+  <p><strong>电话 / WhatsApp：</strong> +7 702 964 4489</p>
+  <p><strong>工作时间：</strong> 6:00 – 17:00</p>
+  <p><strong>地址：</strong> Taldy Lane 4 / Ak-Bulak-2 district, 3</p>
+</section>
+</div>
+
+<a class="whatsapp" href="https://wa.me/77029644489" target="_blank">WhatsApp</a>
+
+<footer>© Dr.Kim.kz</footer>
+
+<script>
+function ru(){
+  document.getElementById('ru').classList.remove('hidden');
+  document.getElementById('cn').classList.add('hidden');
+}
+function cn(){
+  document.getElementById('cn').classList.remove('hidden');
+  document.getElementById('ru').classList.add('hidden');
+}
+</script>
 
 </body>
 </html>
