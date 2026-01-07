@@ -1,196 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Dr.Kim.kz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-  background:#f7f9f8;
-  color:#222;
-  animation:bgMove 12s ease-in-out infinite alternate;
-}
-
-@keyframes bgMove {
-  from { background:#f7f9f8; }
-  to { background:#eef4f1; }
-}
-
-header {
-  background:linear-gradient(180deg,#ffffff,#f2f6f4);
-  padding:18px 0;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  border-bottom:1px solid #e1e7e4;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-
-nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  max-width:900px;
-  margin:auto;
-  padding:0 20px;
-}
-
-nav a {
-  text-decoration:none;
-  color:#1f6f5c;
-  font-weight:600;
-  padding:8px 14px;
-  border-radius:20px;
-  transition:all .3s ease;
-}
-
-nav a:hover {
-  background:#e6f2ee;
-  transform:translateY(-1px);
-}
-
-.lang-btns button {
-  border:none;
-  background:#1f6f5c;
-  color:white;
-  padding:6px 12px;
-  margin-left:5px;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-section {
-  max-width:900px;
-  margin:50px auto;
-  padding:0 20px;
-  animation:float 10s ease-in-out infinite;
-}
-
-@keyframes float {
-  from { transform:translateY(0); }
-  to { transform:translateY(-5px); }
-}
-
-h1 { color:#1f6f5c; }
-
-.hidden { display:none; }
-
-.map {
-  margin-top:20px;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
-
-footer {
-  text-align:center;
-  padding:30px;
-  color:#777;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Dr.Kim.kz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+            <div class="lang-btns">
+                <button id="ru-btn">RU</button>
+                <button id="cn-btn">中文</button>
+            </div>
+        </nav>
+    </header>
 
-<header>
-  <nav>
-    <div>
-      <a href="#about">О нас</a>
-      <a href="#contacts">Контакты</a>
+    <!-- RU -->
+    <div id="ru">
+        <section id="about">
+            <h1>Dr.Kim.kz</h1>
+            <p>
+                Иглотерапия воздействует на первопричину заболевания.
+                Восстания и опухоли внутренних органов нарушают обмен веществ
+                и вызывают дефицит витаминов, который не устраняется
+                приёмом препаратов без устранения причины.
+            </p>
+            <p>
+                В отличие от традиционной медицины, иглотерапия восстанавливает
+                естественные процессы организма без операций и вредных таблеток.
+            </p>
+            <p><strong>Не верите? Попробуйте!</strong></p>
+        </section>
+
+        <section id="contacts">
+            <h1>Контакты</h1>
+            <p><strong>Телефон / WhatsApp:</strong> +7 702 964 4489</p>
+            <p><strong>Время работы:</strong> с 6:00 до 17:00</p>
+            <p><strong>Адрес:</strong> Переулок Талды, 4 / микрорайон Ак-булак-2, 3</p>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps?q=Переулок+Талды+4+Алматы&output=embed"
+                    width="100%" height="300" style="border:0;" loading="lazy"
+                    title="Карта расположения клиники">
+                </iframe>
+            </div>
+        </section>
     </div>
-    <div class="lang-btns">
-      <button onclick="ru()">RU</button>
-      <button onclick="cn()">中文</button>
+
+    <!-- CN -->
+    <div id="cn" class="hidden">
+        <section>
+            <h1>Dr.Kim.kz</h1>
+            <p>
+                针灸疗法针对疾病的根本原因。
+                内脏的炎症或肿瘤会破坏新陈代谢，
+                在未消除病因的情况下，维生素无法被吸收。
+            </p>
+            <p>
+                与传统医学不同，针灸激活人体自我修复能力，
+                无需手术或有害药物。
+            </p>
+            <p><strong>不相信？试试看！</strong></p>
+        </section>
+
+        <section>
+            <h1>联系方式</h1>
+            <p><strong>电话 / WhatsApp：</strong> +7 702 964 4489</p>
+            <p><strong>工作时间：</strong> 6:00 – 17:00</p>
+            <p><strong>地址：</strong> Taldy Lane 4 / Ak-Bulak-2 district, 3</p>
+        </section>
     </div>
-  </nav>
-</header>
 
-<!-- RU -->
-<div id="ru">
-<section id="about">
-  <h1>Dr.Kim.kz</h1>
-  <p>
-    Иглотерапия воздействует на первопричину заболевания.
-    Воспаления и опухоли внутренних органов нарушают обмен веществ
-    и вызывают дефицит витаминов, который не устраняется
-    приёмом препаратов без устранения причины.
-  </p>
-  <p>
-    В отличие от традиционной медицины, иглотерапия восстанавливает
-    естественные процессы организма без операций и вредных таблеток.
-  </p>
-  <p><strong>Не верите? Попробуйте!</strong></p>
-</section>
+    <a class="whatsapp" href="https://wa.me/77029644489" target="_blank" rel="noopener">
+        WhatsApp
+    </a>
 
-<section id="contacts">
-  <h1>Контакты</h1>
-  <p><strong>Телефон / WhatsApp:</strong> +7 702 964 4489</p>
-  <p><strong>Время работы:</strong> с 6:00 до 17:00</p>
-  <p><strong>Адрес:</strong> Переулок Талды, 4 / микрорайон Ак-булак-2, 3</p>
+    <footer>© Dr.Kim.kz</footer>
 
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps?q=Переулок+Талды+4+Алматы&output=embed"
-      width="100%" height="300" style="border:0;" loading="lazy">
-    </iframe>
-  </div>
-</section>
-</div>
-
-<!-- CN -->
-<div id="cn" class="hidden">
-<section>
-  <h1>Dr.Kim.kz</h1>
-  <p>
-    针灸疗法针对疾病的根本原因。
-    内脏的炎症或肿瘤会破坏新陈代谢，
-    在未消除病因的情况下，维生素无法被吸收。
-  </p>
-  <p>
-    与传统医学不同，针灸激活人体自我修复能力，
-    无需手术或有害药物。
-  </p>
-  <p><strong>不相信？试试看！</strong></p>
-</section>
-
-<section>
-  <h1>联系方式</h1>
-  <p><strong>电话 / WhatsApp：</strong> +7 702 964 4489</p>
-  <p><strong>工作时间：</strong> 6:00 – 17:00</p>
-  <p><strong>地址：</strong> Taldy Lane 4 / Ak-Bulak-2 district, 3</p>
-</section>
-</div>
-
-<a class="whatsapp" href="https://wa.me/77029644489" target="_blank">WhatsApp</a>
-
-<footer>© Dr.Kim.kz</footer>
-
-<script>
-function ru(){
-  document.getElementById('ru').classList.remove('hidden');
-  document.getElementById('cn').classList.add('hidden');
-}
-function cn(){
-  document.getElementById('cn').classList.remove('hidden');
-  document.getElementById('ru').classList.add('hidden');
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
